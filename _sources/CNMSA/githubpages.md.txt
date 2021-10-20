@@ -1,0 +1,30 @@
+# githubpagesの作成
+
+構築環境：Windows10+Sphinx+markdown
+
+## Sphinxのインストール
+  
+  以下の手順をベースに実施
+  
+  ><https://www.kimoton.com/entry/20181009/1539049414>
+  
+  下記のようなエラーが出る場合
+```python
+C:\Sphinx\source\index.rst:9: WARNING: toctree contains reference to document 'test/main' that doesn't have a title: no link will be generated
+```
+  conf.py末尾に以下を挿入
+```python
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'auto_toc_tree_section': 'Welcome',
+            }, 'env')
+    app.add_transform(AutoStructify)
+```
+
+
+## （自分用）Markdown文法チートシート
+  Markdown記法一覧
+  ><https://qiita.com/oreo/items/82183bfbaac69971917f>
+  
+  Qiita Markdown 書き方 まとめ
+  ><https://qiita.com/shizuma/items/8616bbe3ebe8ab0b6ca1>
