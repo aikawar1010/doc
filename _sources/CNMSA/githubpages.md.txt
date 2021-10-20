@@ -28,3 +28,19 @@ def setup(app):
   
   Qiita Markdown 書き方 まとめ
   ><https://qiita.com/shizuma/items/8616bbe3ebe8ab0b6ca1>
+
+
+## githubpagesへの公開
+  
+  作成したページをgithub上に公開する。
+  githubは全く触れたことのない初心者であったため、リポジトリの作成方法などはググって出てきた適当なブログ記事参照。
+  新規に作成したリポジトリdoc（以後、doc）にビルドしたhtml配下のファイルを全て追加。
+  
+  Github on Desktopを利用して、ローカルのhtml配下にdocをクローン。今後はSphinxのmakeで更新した情報をGithub on Desktopからコミットする形でメンテ。
+  現状本ページの作成の流れが以下のようになる。
+  	1.Sphinx・Markdownによるページの作成
+  	2.コンソール（自分の場合はGit bash）からmake実行
+  	3.Github on Desktopからコミット
+  	4.ページ更新確認
+  今後はgithubActionを利用してコミット自動化を検討したい。
+  
