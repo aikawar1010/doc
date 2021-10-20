@@ -33,14 +33,17 @@ def setup(app):
 ## githubpagesへの公開
   
   作成したページをgithub上に公開する。
-  githubは全く触れたことのない初心者であったため、リポジトリの作成方法などはググって出てきた適当なブログ記事参照。
-  新規に作成したリポジトリdoc（以後、doc）にビルドしたhtml配下のファイルを全て追加。
+githubは全く触れたことのない初心者であったため、リポジトリの作成方法などはググって出てきた適当なブログ記事参照。
+新規に作成したリポジトリdoc（以後、doc）にビルドしたhtml配下のファイルを全て追加。
   
   Github on Desktopを利用して、ローカルのhtml配下にdocをクローン。今後はSphinxのmakeで更新した情報をGithub on Desktopからコミットする形でメンテ。
+ローカルから呼び出すhtmlはCSSも適用された形で見えていたが、githubpages経由で確認するとCSS読み込まれていなかったため、下記ブログを参照。
+  ><https://qiita.com/tutuz/items/88a32d94d700b33dc3ea>
+  
   現状本ページの作成の流れが以下のようになる。
-  	1.Sphinx・Markdownによるページの作成
-  	2.コンソール（自分の場合はGit bash）からmake実行
-  	3.Github on Desktopからコミット
-  	4.ページ更新確認
+	1.Sphinx・Markdownによるページの作成
+	2.コンソール（自分の場合はGit bash）からmake実行
+	3.Github on Desktopからコミット
+	4.ページ更新確認
   今後はgithubActionを利用してコミット自動化を検討したい。
   
