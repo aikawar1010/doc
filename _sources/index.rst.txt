@@ -12,8 +12,8 @@ debugroom(aikawar)
    :numbered:
 
    /CNMSA/githubpages.md
-
-
+   /CNMSA/aws-samplespring.md
+   
 Indices and tables
 ==================
 
