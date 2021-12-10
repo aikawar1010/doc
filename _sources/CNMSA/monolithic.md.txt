@@ -1,0 +1,39 @@
+# AWS上でSpringアプリケーションの作成
+
+  下記の記事を参考に作業を進める。
+  https://news.mynavi.jp/itsearch/series/devsoft/AWS.html
+  【連載】AWSで作るクラウドネイティブアプリケーションの基本[4]～[13]
+  
+  下記の構成を作成する。
+  ![](./monolithic_picture.PNG)
+
+## VPC・サブネットの作成
+  
+  下記の記事を参照
+  https://news.mynavi.jp/itsearch/article/devsoft/4354
+  
+  VPCは元々作成済みのため、サブネットの作成のみ実施
+
+## ALBの作成
+  
+  下記の記事を参照
+  https://news.mynavi.jp/itsearch/article/devsoft/4359
+  
+  手順は2年前のということもあり、作成手順がアップデートされたためか
+  ALB作成時に事前にターゲットグループの作成が必要だった。
+  インスタンス向けのHTTP:80をpublic、private両面で作成を実施。
+
+## EC2の作成
+
+  
+
+## RDSの作成
+
+  
+## アプリケーションのデプロイ
+
+  
+
+## 疎通確認
+
+  

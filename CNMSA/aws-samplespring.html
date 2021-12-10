@@ -19,6 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="3. AWS上でSpringアプリケーションの作成" href="monolithic.html" />
     <link rel="prev" title="1. githubpagesの作成" href="githubpages.html" /> 
 </head>
 
@@ -43,8 +44,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. AWS上でSpringアプリケーションの作成</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#vpc">2.1. VPC・サブネットの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#alb">2.2. ALBの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spring">2.3. Springを使用したコンテナアプリケーションの実装方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ecs">2.4. ECSクラスタの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">2.5. ECSタスクの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.6. ECSサービスの作成</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="monolithic.html">3. AWS上でSpringアプリケーションの作成</a></li>
 </ul>
 
         </div>
@@ -92,6 +98,33 @@ https://news.mynavi.jp/itsearch/article/devsoft/4359</p>
 ALB作成時に事前にターゲットグループの作成が必要だった。
 インスタンス向けのHTTP:80をpublic、private両面で作成を実施。</p>
 </section>
+<section id="spring">
+<h2><span class="section-number">2.3. </span>Springを使用したコンテナアプリケーションの実装方法<a class="headerlink" href="#spring" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>Springbootを利用してのアプリケーション作成が初のため、下記を参考にサンプルアプリケーションを実装
+https://pleiades.io/help/idea/your-first-spring-application.html#run-spring-application</p>
+</section>
+<section id="ecs">
+<h2><span class="section-number">2.4. </span>ECSクラスタの作成<a class="headerlink" href="#ecs" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>下記の記事を参照
+https://news.mynavi.jp/techplus/article/techp4405/</p>
+<p>ECSクラスタを作成する。
+併せて作成されるセキュリティグループに、コンテナとの通信を許可するため、TCPポート「ポート32768-61000」を必ず追加すること。</p>
+</section>
+<section id="id1">
+<h2><span class="section-number">2.5. </span>ECSタスクの作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>下記の記事を参照
+https://news.mynavi.jp/techplus/article/techp4408/</p>
+<p>ECSタスクを作成する。
+事前にpushしたDockerhub上のイメージからコンテナを作成すること。</p>
+</section>
+<section id="id2">
+<h2><span class="section-number">2.6. </span>ECSサービスの作成<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>下記の記事を参照
+https://news.mynavi.jp/techplus/article/techp4416/</p>
+<p>ECSサービスを作成する。
+構築後、以下のURLにアクセスして疎通確認を実施。
+http://ma-aikawar-alb-public-1822414233.ap-northeast-1.elb.amazonaws.com/backend-for-frontend/index.html</p>
+</section>
 </section>
 
 
@@ -99,6 +132,7 @@ ALB作成時に事前にターゲットグループの作成が必要だった�
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="githubpages.html" class="btn btn-neutral float-left" title="1. githubpagesの作成" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="monolithic.html" class="btn btn-neutral float-right" title="3. AWS上でSpringアプリケーションの作成" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

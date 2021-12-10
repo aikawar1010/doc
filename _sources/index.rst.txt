@@ -13,6 +13,7 @@ debugroom(aikawar)
 
    /CNMSA/githubpages.md
    /CNMSA/aws-samplespring.md
+   /CNMSA/monolithic.md
    
 Indices and tables
 ==================

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. AWS上でSpringアプリケーションの作成 &mdash; debugroom  ドキュメント</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="prev" title="2. AWS上でSpringアプリケーションの作成" href="aws-samplespring.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> debugroom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">main</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="githubpages.html">1. githubpagesの作成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws-samplespring.html">2. AWS上でSpringアプリケーションの作成</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. AWS上でSpringアプリケーションの作成</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vpc">3.1. VPC・サブネットの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alb">3.2. ALBの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ec2">3.3. EC2の作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rds">3.4. RDSの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">3.5. アプリケーションのデプロイ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.6. 疎通確認</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">debugroom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">3. </span>AWS上でSpringアプリケーションの作成</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/CNMSA/monolithic.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="awsspring">
+<h1><span class="section-number">3. </span>AWS上でSpringアプリケーションの作成<a class="headerlink" href="#awsspring" title="このヘッドラインへのパーマリンク"></a></h1>
+<p>下記の記事を参考に作業を進める。
+https://news.mynavi.jp/itsearch/series/devsoft/AWS.html
+【連載】AWSで作るクラウドネイティブアプリケーションの基本[4]～[13]</p>
+<p>下記の構成を作成する。
+<img alt="../_images/monolithic_picture.PNG" src="../_images/monolithic_picture.PNG" /></p>
+<section id="vpc">
+<h2><span class="section-number">3.1. </span>VPC・サブネットの作成<a class="headerlink" href="#vpc" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>下記の記事を参照
+https://news.mynavi.jp/itsearch/article/devsoft/4354</p>
+<p>VPCは元々作成済みのため、サブネットの作成のみ実施</p>
+</section>
+<section id="alb">
+<h2><span class="section-number">3.2. </span>ALBの作成<a class="headerlink" href="#alb" title="このヘッドラインへのパーマリンク"></a></h2>
+<p>下記の記事を参照
+https://news.mynavi.jp/itsearch/article/devsoft/4359</p>
+<p>手順は2年前のということもあり、作成手順がアップデートされたためか
+ALB作成時に事前にターゲットグループの作成が必要だった。
+インスタンス向けのHTTP:80をpublic、private両面で作成を実施。</p>
+</section>
+<section id="ec2">
+<h2><span class="section-number">3.3. </span>EC2の作成<a class="headerlink" href="#ec2" title="このヘッドラインへのパーマリンク"></a></h2>
+</section>
+<section id="rds">
+<h2><span class="section-number">3.4. </span>RDSの作成<a class="headerlink" href="#rds" title="このヘッドラインへのパーマリンク"></a></h2>
+</section>
+<section id="id1">
+<h2><span class="section-number">3.5. </span>アプリケーションのデプロイ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h2>
+</section>
+<section id="id2">
+<h2><span class="section-number">3.6. </span>疎通確認<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="aws-samplespring.html" class="btn btn-neutral float-left" title="2. AWS上でSpringアプリケーションの作成" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, aikawar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
