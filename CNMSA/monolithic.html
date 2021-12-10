@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. AWS上でSpringアプリケーションの作成 &mdash; debugroom  ドキュメント</title>
+  <title>3. モノリシックアーキ環境の構築 &mdash; debugroom  ドキュメント</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -41,13 +41,13 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="githubpages.html">1. githubpagesの作成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aws-samplespring.html">2. AWS上でSpringアプリケーションの作成</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. AWS上でSpringアプリケーションの作成</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. モノリシックアーキ環境の構築</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#vpc">3.1. VPC・サブネットの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#alb">3.2. ALBの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ec2">3.3. EC2の作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rds">3.4. RDSの作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">3.5. アプリケーションのデプロイ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">3.6. 疎通確認</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.5. アプリケーションのデプロイ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3.6. 疎通確認</a></li>
 </ul>
 </li>
 </ul>
@@ -66,7 +66,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">3. </span>AWS上でSpringアプリケーションの作成</li>
+      <li><span class="section-number">3. </span>モノリシックアーキ環境の構築</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/CNMSA/monolithic.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -76,13 +76,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="awsspring">
-<h1><span class="section-number">3. </span>AWS上でSpringアプリケーションの作成<a class="headerlink" href="#awsspring" title="このヘッドラインへのパーマリンク"></a></h1>
-<p>下記の記事を参考に作業を進める。
-https://news.mynavi.jp/itsearch/series/devsoft/AWS.html
-【連載】AWSで作るクラウドネイティブアプリケーションの基本[4]～[13]</p>
-<p>下記の構成を作成する。
+  <section id="id1">
+<h1><span class="section-number">3. </span>モノリシックアーキ環境の構築<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h1>
+<p>【目的】
+・モノリシックアーキの構築を通して、AWSでの環境構築を経験する。
+・アプリケーションのデプロイ方法を習得する。</p>
+<p>環境構成は以下の通り。
 <img alt="../_images/monolithic_picture.PNG" src="../_images/monolithic_picture.PNG" /></p>
+<p>サンプルアプリケーションは以下のものを使用する。
+http:~~</p>
 <section id="vpc">
 <h2><span class="section-number">3.1. </span>VPC・サブネットの作成<a class="headerlink" href="#vpc" title="このヘッドラインへのパーマリンク"></a></h2>
 <p>下記の記事を参照
@@ -103,11 +105,11 @@ ALB作成時に事前にターゲットグループの作成が必要だった�
 <section id="rds">
 <h2><span class="section-number">3.4. </span>RDSの作成<a class="headerlink" href="#rds" title="このヘッドラインへのパーマリンク"></a></h2>
 </section>
-<section id="id1">
-<h2><span class="section-number">3.5. </span>アプリケーションのデプロイ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク"></a></h2>
-</section>
 <section id="id2">
-<h2><span class="section-number">3.6. </span>疎通確認<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+<h2><span class="section-number">3.5. </span>アプリケーションのデプロイ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク"></a></h2>
+</section>
+<section id="id3">
+<h2><span class="section-number">3.6. </span>疎通確認<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク"></a></h2>
 </section>
 </section>
 
